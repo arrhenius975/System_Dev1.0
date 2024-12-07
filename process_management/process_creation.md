@@ -18,26 +18,24 @@ Let's look at a practical implementation that demonstrates process creation:
 #include <unistd.h>
 #include <sys/wait.h>
 
-int main() {
+int main(){
     pid_t pid;
     
     printf("Parent Process: About to create a child process. My PID is %d\n", getpid());
     
     pid = fork();
     
-    if (pid < 0) {
+    if(pid < 0){
         fprintf(stderr, "Fork Failed!");
         return 1;
     }
-    else if (pid == 0) {
-        // Child Process
+    else if(pid == 0){
         printf("Child Process: I am the child. My PID is %d, My Parent's PID is %d\n", 
                getpid(), getppid());
         
         printf("Child Process: Executing 'ls' command:\n");
         execlp("/bin/ls", "ls", "-l", NULL);
         
-        // If execlp fails
         perror("Child Process: execlp failed");
         return 1;
     }
@@ -50,8 +48,7 @@ int main() {
         printf("Parent Process: Child process has completed. Continuing parent execution.\n");
         printf("Parent Process: Doing some work after child completion...\n");
         
-        // Simulate some parent process work
-        for (int i = 0; i < 3; i++) {
+        for(int i = 0; i < 3; i++){
             printf("Parent Process: Processing item %d\n", i + 1);
             sleep(1);
         }
