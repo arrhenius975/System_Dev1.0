@@ -39,7 +39,7 @@ int main(){
         perror("Child Process: execlp failed");
         return 1;
     }
-    else {
+    else{
         // Parent Process
         printf("Parent Process: Child created with PID %d. I'm waiting for child to complete.\n", pid);
         
