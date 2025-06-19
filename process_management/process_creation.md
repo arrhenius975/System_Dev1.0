@@ -102,4 +102,3 @@ Understanding `fork()` and `exec()` is crucial for system programming in Linux. 
 
 **Note to Reader**: The screenshot will provide a visual representation of the process creation and execution flow.
 
-Would you like me to modify anything about the post? I've left a placeholder for the screenshot, which you can replace with your actual output screenshot when you run the program.
